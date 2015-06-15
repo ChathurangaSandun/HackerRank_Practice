@@ -28,7 +28,7 @@ public class Cuttheticks {
         while (true) {
             int stick=0;
             for (int i = 0; i < array.length; i++) {
-                if(array[i]/2>=1){
+                if(array[i]/2>0){
                     stick++;
                     array[i]=array[i]/2;
                 }
@@ -47,8 +47,5 @@ public class Cuttheticks {
 
     }
     
-    public static void main(String[] args) {
-        new Cuttheticks();
-    }
-
+    
 }
