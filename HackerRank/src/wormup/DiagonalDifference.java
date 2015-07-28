@@ -26,22 +26,42 @@ public class DiagonalDifference {
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 int number = input.nextInt();
-
-                if (i == j) {
-                    firstDiagonal += number;
-                } else if ((N - 1 - i) == j) {
-                    secondDiagonal += number;
-                    System.out.println(number);
-                }
-
+                matrix[i][j] = number;
             }
         }
 
-        System.out.println(firstDiagonal+" "+secondDiagonal);
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (i == j) {
+                    firstDiagonal += matrix[i][j];
+                }
+            }
+
+        }
         
+        for (int i = 0; i < N; i++) {
+            for (int j = N-1-i; j > -1; j--) {
+                System.out.println(j);
+                if (N-1-i == j) {
+                    System.out.println("-"+matrix[i][j]);
+                    secondDiagonal += matrix[i][j];
+                }
+            }
+
+        }
+        
+        
+        
+
+        System.out.println(firstDiagonal + " " + secondDiagonal);
+
         int dif = firstDiagonal - secondDiagonal;
         System.out.println(dif < 0 ? -dif : dif);
 
+    }
+
+    public static void main(String[] args) {
+        new DiagonalDifference();
     }
 
 }
